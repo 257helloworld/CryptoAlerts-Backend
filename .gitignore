@@ -2,3 +2,7 @@ key.py
 __pycache__
 venv/
 credentials.json
+data/
+/services/telegram_keys.py
+/services/__pycache__
+/services/cryptoalerts.session

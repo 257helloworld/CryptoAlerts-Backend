@@ -6,7 +6,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import key
 import datetime
 import gspread
-import requests
 from oauth2client.service_account import ServiceAccountCredentials
 from services.email import send_email
 from templates import alert_confirmation_mail, alert_mail
@@ -52,8 +51,7 @@ def get_coins():
     coin_id = request.args.get("coin_id")
     url = 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest'
     parameters = {
-        'id': coin_id,
-        'convert': "INR"
+        'id': coin_id
     }
     headers = {
         'Accepts': 'application/json',
