@@ -1,4 +1,5 @@
 from flask import Flask, json, redirect, request, Response, jsonify, url_for
+from flask_cors import CORS, cross_origin
 from requests import Request, Session
 from flask_mail import Mail, Message
 import requests
@@ -25,6 +26,8 @@ spreadsheet = client.open_by_key("10e8hzXF25BlCiFklgaZnmO2sBsnx-lhart7iFO_S4Uk")
 worksheet = spreadsheet.get_worksheet(0)
 
 app = Flask(__name__)
+CORS(app)
+
 mail = Mail(app)
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
